@@ -15,7 +15,6 @@ void times_table(void)
 		{
 			_putchar(',');
 			_putchar(' ');
-			
 
 			result = number * multi;
 
