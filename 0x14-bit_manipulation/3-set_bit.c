@@ -1,21 +1,16 @@
-#include <stdio.h>
-#include "holberton.h"
+#include "main.h"
+#include <stdlib.h>
 
 /**
- * set_bit - returns the value of a bit at a given index
- * @n: decimal number
+ * set_bit - sets the value of a bit to 1 at a given index
+ * @n: parameter
  * @index: index
- * Return: 1 if it worked or -1 if an error occurred
+ * Return: value
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int var, mask;
-
-	var = 0;
-	mask = 1;
-	if (index > 63)
+	if (index > sizeof(n) * 8)
 		return (-1);
-	var = *n | (mask << index);
-	*n = var;
+	*n |= (1 << index);
 	return (1);
 }
